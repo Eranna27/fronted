@@ -20,7 +20,7 @@ export const LoginFunction = async (data) => {
 };
 
 //add register
-export const register = async (data, header) => {
+export const registerFunction = async (data, header) => {
   return await commonRequest(
     "POST",
     `${BASE_URL}/register`,
