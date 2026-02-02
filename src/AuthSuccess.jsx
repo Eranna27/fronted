@@ -1,4 +1,3 @@
-// src/pages/AuthSuccess.jsx
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -6,21 +5,29 @@ export default function AuthSuccess() {
   const location = useLocation();
   const navigate = useNavigate();
   const query = new URLSearchParams(location.search);
-  const token = query.get("token");
-  const userId = query.get("userId");
-  const role = query.get("role");
-  const email = query.get("email");
+
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    const token = params.get("token");
+    const userId = params.get("userId");
+    const role = params.get("role");
+    const email = params.get("email");
+
     if (token) {
       localStorage.setItem("token", token);
       localStorage.setItem("userId", userId);
       localStorage.setItem("role", role);
       localStorage.setItem("email", email);
-       navigate("/profile");
 
+        navigate("/profile");
+    } else {
+      navigate("/login");
     }
-  }, [token, userId, role, email, navigate]);
+  }, []);
+
+  
 
   return (
     <div>
