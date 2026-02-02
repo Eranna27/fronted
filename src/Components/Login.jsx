@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { LoginFunction } from "../Services/Apis";
+import GoogleLoginButton from "./GoogleLoginButton";
 import { useState } from "react";
 
 export default function Login() {
@@ -136,7 +137,12 @@ export default function Login() {
         >
           {loading ? "Logging..." : "Login"}
         </Button>
+        
+    <div>
+    <GoogleLoginButton />
+  </div>
       </form>
     </div>
   );
 }
+
