@@ -1,13 +1,14 @@
 import "../Styles/ProfileCard.css";
-import Avatar from "@mui/material/Avatar";
+
 export default function ProfileCard() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const email = localStorage.getItem("email");
 
   return (
     <div className="profile-box">
       <div className="account-settings">
         <h4>Account Settings</h4>
       </div>
+
       <div className="second-part">
         <div className="profile-header">
           <img
@@ -17,16 +18,16 @@ export default function ProfileCard() {
           />
 
           <div className="profile-info">
-            <p className="profile-name">{user?.fullName}</p>
-            <p className="profile-email">{user?.email}</p>
+            <p className="profile-name">
+              {email ? email.split("@")[0] : "User"}
+            </p>
+            <p className="profile-email">{email}</p>
           </div>
         </div>
 
         <div className="lorem">
           <p className="profile-desc">
-            Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam
-            Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam
-            Erat, Sed Diam
+            Logged in using Google Authentication
           </p>
           <div className="divider"></div>
         </div>
