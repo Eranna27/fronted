@@ -138,9 +138,9 @@ export default function Login() {
           {loading ? "Logging..." : "Login"}
         </Button>
         
-    <div>
+    {/* <div>
     <GoogleLoginButton />
-  </div>
+  </div> */}
       </form>
     </div>
   );

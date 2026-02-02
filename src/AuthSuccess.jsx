@@ -4,9 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 export default function AuthSuccess() {
   const location = useLocation();
   const navigate = useNavigate();
-  const query = new URLSearchParams(location.search);
-
-
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
